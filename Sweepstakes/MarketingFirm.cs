@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class Program
+    class MarketingFirm
     {
         //member variables(Has A)
 
         //constuctor(Spawner)
 
         //member method(Can do)
-        static void Main(string[] args)
+        public void CreateSweepstakes()
         {
+
         }
     }
 }
