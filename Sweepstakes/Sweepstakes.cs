@@ -9,12 +9,14 @@ namespace Sweepstakes
     public class Sweepstakes
     {
         //member variables(Has A)
+        public List<Contestant> contestants;
         string name;
         
 
         //constuctor(Spawner)
         public Sweepstakes(string name)
         {
+            contestants = new List<Contestant>();
             this.name = name;
         }
 
@@ -26,11 +28,12 @@ namespace Sweepstakes
 
         public void RegisterContestant(Contestant contestant)
         {
-
+            //contestent.Add(contestent);
         }
         public void PrintContestentInfo(Contestant contestant)
         {
-
+            
+            
         }
     }
 }
