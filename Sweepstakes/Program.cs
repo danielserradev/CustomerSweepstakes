@@ -15,22 +15,17 @@ namespace Sweepstakes
         //member method(Can do)
         static void Main(string[] args)
         {
+            MarketingFirm marketingFirm = new MarketingFirm();
+            marketingFirm.ChooseManager();
+            //marketingFirm.ChooseSweepstakesName();
 
-            Contestant contestant1 = new Contestant();            
+
+            //Sweepstakes sweepstakes = new Sweepstakes("vacation");
+            //Contestant contestant1 = new Contestant();
             //Contestant contestant2 = new Contestant();
-            //Contestant contestant3 = new Contestant();
-            Sweepstakes sweepstakes = new Sweepstakes("vacation");
-            sweepstakes.RegisterContestant(contestant1);
-
-
-            //Console.WriteLine(contestant1.FirstName);
-            //Console.WriteLine(contestant1.LastName);
-            //Console.WriteLine(contestant1.EmailAddress);
-            //Console.WriteLine(contestant1.RegistrationNumber);
-            //Console.WriteLine(contestant2.FirstName);
-            //Console.WriteLine(contestant2.LastName);
-            //Console.WriteLine(contestant2.EmailAddress);
-            //Console.WriteLine(contestant2.RegistrationNumber);
+            
+            //sweepstakes.RegisterContestant(contestant1);
+            //sweepstakes.RegisterContestant(contestant2);
 
             Console.ReadLine();
         }

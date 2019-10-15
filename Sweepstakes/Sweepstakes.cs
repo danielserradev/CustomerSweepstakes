@@ -28,7 +28,13 @@ namespace Sweepstakes
 
         public void RegisterContestant(Contestant contestant)
         {
-            //contestent.Add(contestent);
+            Dictionary<Guid, string> contestants = new Dictionary<Guid, string>();
+            contestants.Add(contestant.RegistrationNumber, contestant.FirstName + " " + contestant.LastName + " " + contestant.EmailAddress);
+
+            foreach (KeyValuePair<Guid, string> pair in contestants)
+            {
+                Console.WriteLine(pair.Key + " - " + pair.Value);
+            }
         }
         public void PrintContestentInfo(Contestant contestant)
         {

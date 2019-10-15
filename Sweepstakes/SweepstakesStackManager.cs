@@ -15,7 +15,7 @@ namespace Sweepstakes
         //member method(Can do)
         public void InsertSweepStakes(Sweepstakes sweepstakes)
         {
-
+            
         }
         public void GetSweepstakes(ISweepStakesManager sweepStakesManager)
         {

@@ -12,7 +12,7 @@ namespace Sweepstakes
         private string firstName;
         private string lastName;
         private string emailAddress;
-        private int registrationNumber;
+        Guid registrationNumber;
 
         public string FirstName
         {
@@ -47,7 +47,7 @@ namespace Sweepstakes
                 emailAddress = value;
             }
         }
-        public int RegistrationNumber
+        public Guid RegistrationNumber
         {
             get
             {
