@@ -30,6 +30,17 @@ namespace Sweepstakes
             Sweepstakes sweepstake = new Sweepstakes(sweepstakesName);
             PickAmountOfContestants(sweepstake);
             managerDecision.InsertSweepStakes(sweepstake);
+            if(UserInterface.DecisionToCreateMoreSweepstakes() == "yes")
+            {
+                ChooseSweepstakesName();
+                CreateSweepstakes(sweepstakesName);
+            }
+            else
+            {
+
+            }
+            
+            
         }
         public void PickAmountOfContestants(Sweepstakes sweepstakes)
         {

@@ -41,7 +41,7 @@ namespace Sweepstakes
                 case "stack":
                     Console.WriteLine("You have choosen a {0} manager", choice);
                     return new SweepstakesStackManager();
-                case " queue":
+                case "queue":
                     Console.WriteLine("You have choosen a {0} manager", choice);
                     return new SweepstakesQueueManager();
                 default:
@@ -61,6 +61,12 @@ namespace Sweepstakes
             Console.WriteLine("How many contestants would you like to enter into the sweepstake?.");
             int amountOfContestants = int.Parse(Console.ReadLine());
             return amountOfContestants;
+        }
+        public static string DecisionToCreateMoreSweepstakes()
+        {
+            Console.WriteLine("Would you like to create more sweepstakes?");
+            string decision = Console.ReadLine();
+            return decision;
         }
 
     }
