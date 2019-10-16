@@ -10,26 +10,21 @@ namespace Sweepstakes
     {
         //member variables(Has A)
         public ISweepStakesManager manager;
-        public string sweepstakesName;
+        public string sweepstakesName;        
+        public int winner;
         //constuctor(Spawner)
 
         //member method(Can do)
         public ISweepStakesManager ChooseManager()
         {
             manager = UserInterface.ChooseBetweenStackOrQueue();            
-            return manager;
+            return manager;            
         }
-        //public string ChooseSweepstakesName()
-        //{
-        //    sweepstakesName = UserInterface.ChooseSweepStakesName();
-        //    Console.WriteLine("The name of your sweepstake is " + sweepstakesName);   
-        //    return sweepstakesName;
-        //}
         public void CreateSweepstakes()
         { 
-            Sweepstakes sweepstake = new Sweepstakes(sweepstakesName);
-            //ChooseSweepstakesName();
+            Sweepstakes sweepstake = new Sweepstakes(sweepstakesName);            
             PickAmountOfContestants(sweepstake);
+            sweepstake.PrintContestentInfo();
             manager.InsertSweepStakes(sweepstake);
             if(UserInterface.DecisionToCreateMoreSweepstakes() == "yes")
             {
@@ -45,21 +40,27 @@ namespace Sweepstakes
         {
             int amount = UserInterface.PickAmountOfContestents();
             for (int i = 0; i < amount; i++)
-            {
-                
+            {                
                 sweepstakes.RegisterContestant(new Contestant());
             }
         }
         public void GrabSweepstakes()
-        {
-            Sweepstakes sweepstake = manager.GetSweepstakes();
-            Console.WriteLine(sweepstake.Name);
-            foreach (Contestant person in sweepstake.contestants)
+        {            
+            Sweepstakes sweepstake = manager.GetSweepstakes();           
+            sweepstake.PickWinner();
+            if (UserInterface.DecisionToCreateMoreSweepstakes() == "yes")
             {
-                Console.WriteLine(person.FirstName + person.LastName);
+                //ChooseSweepstakesName();
+                CreateSweepstakes();
             }
-            
-
-        }
+            else if(UserInterface.DecisionToCreateMoreSweepstakes() == "no")
+            {
+                GrabSweepstakes();
+            }
+            else
+            {
+                
+            }
+        }        
     }
 }

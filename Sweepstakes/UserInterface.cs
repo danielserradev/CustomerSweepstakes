@@ -45,8 +45,6 @@ namespace Sweepstakes
                     Console.WriteLine("You have choosen a {0} manager", choice);
                     return new SweepstakesQueueManager();
                 default:
-                    //Console.WriteLine("Please enter 'stack' or 'queue'.");
-                    //ChooseBetweenStackOrQueue();
                     throw new ApplicationException(string.Format("Not a valid manager choice"));
             }       
         }
@@ -64,7 +62,7 @@ namespace Sweepstakes
         }
         public static string DecisionToCreateMoreSweepstakes()
         {
-            Console.WriteLine("Would you like to create more sweepstakes?");
+            Console.WriteLine("Press 'yes' to create more sweepstakes, 'no' to grab sweepstakes to get a winner, if niether press the enter key to exit?");
             string decision = Console.ReadLine();
             return decision;
         }

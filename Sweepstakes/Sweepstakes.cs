@@ -9,9 +9,10 @@ namespace Sweepstakes
     public class Sweepstakes
     {
         //member variables(Has A)
-        public List<Contestant> contestants;
+        //public List<Contestant> contestants;
         private string name;
-        Dictionary<Guid, string> list = new Dictionary<Guid, string>();
+        public Dictionary<Guid, Contestant> contestants = new Dictionary<Guid, Contestant>();
+        Random rng = new Random();
         public string Name
         {
             get
@@ -23,34 +24,29 @@ namespace Sweepstakes
                 name = value;
             }
         }
-
         //constuctor(Spawner)
         public Sweepstakes(string name)
-        {
-            contestants = new List<Contestant>();
+        {            
             this.name = UserInterface.ChooseSweepStakesName();
         }
-
-        //member method(Can do)
-        //public Contestant PickWinner()
-        //{
-            
-        //}
-
         public void RegisterContestant(Contestant contestant)
+        {            
+            contestants.Add(contestant.RegistrationNumber, contestant);
+        }
+        public void PrintContestentInfo()
         {
-            
-            list.Add(contestant.RegistrationNumber, contestant.FirstName + " " + contestant.LastName + " " + contestant.EmailAddress);
-
-            foreach (KeyValuePair<Guid, string> pair in list)
+            Console.WriteLine("The registered contestants for the {0} Sweepstake are listed below.", Name);
+            foreach (KeyValuePair<Guid, Contestant> pair in contestants)
             {
-                Console.WriteLine(pair.Key + " - " + pair.Value);
+                Console.WriteLine(pair.Key + " - " + pair.Value.FirstName + " " + pair.Value.LastName);
             }
         }
-        public void PrintContestentInfo(Contestant contestant)
+        public void PickWinner()
         {
-            
-            
+            List<Guid> KeyList = new List<Guid>(contestants.Keys);
+            Guid randomnKey = KeyList[rng.Next(KeyList.Count)];
+            Contestant winner = contestants[randomnKey];
+            Console.WriteLine("Congratulations to " + winner.FirstName + " " + winner.LastName + " for winning the Sweepstake! ");
         }
     }
 }

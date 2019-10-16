@@ -16,18 +16,16 @@ namespace Sweepstakes
         public void InsertSweepStakes(Sweepstakes sweepstake)
         {            
             myStack.Push(sweepstake);
-            Console.WriteLine("Your Stack has an amount of {0}.", myStack.Count);
+            Console.WriteLine("Your Sweepstake Stack has an amount of {0}.", myStack.Count);
             foreach (Sweepstakes item in myStack)
             {
-                Console.WriteLine(item.contestants);
+                Console.WriteLine(item.Name);
             }
             
         }        
         public Sweepstakes GetSweepstakes()
         {
-            return myStack.Pop();
-             
+            return myStack.Pop();            
         }
-
     }
 }

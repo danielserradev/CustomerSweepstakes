@@ -16,18 +16,15 @@ namespace Sweepstakes
         public void InsertSweepStakes(Sweepstakes sweepstake)
         {
             myQ.Enqueue(sweepstake);
-            Console.WriteLine("Your Queue has an amount of {0}.", myQ.Count);
+            Console.WriteLine("Your Sweepstake Queue has an amount of {0}.", myQ.Count);
             foreach (Sweepstakes item in myQ)
             {
-                Console.WriteLine(item.contestants);
+                Console.WriteLine(item);
             }
         }
          public Sweepstakes GetSweepstakes()
         {
             return myQ.Dequeue();
         }
-
-
-
     }
 }
