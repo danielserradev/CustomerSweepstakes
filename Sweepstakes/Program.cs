@@ -17,8 +17,8 @@ namespace Sweepstakes
         {
             MarketingFirm marketingFirm = new MarketingFirm();
             marketingFirm.ChooseManager();
-            marketingFirm.ChooseSweepstakesName();
-            marketingFirm.CreateSweepstakes("Vacation");
+            //marketingFirm.ChooseSweepstakesName();
+            marketingFirm.CreateSweepstakes();
 
 
             //Sweepstakes sweepstakes = new Sweepstakes("vacation");

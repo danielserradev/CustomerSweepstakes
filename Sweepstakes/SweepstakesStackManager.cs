@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
@@ -20,17 +16,17 @@ namespace Sweepstakes
         public void InsertSweepStakes(Sweepstakes sweepstake)
         {            
             myStack.Push(sweepstake);
-            Console.WriteLine("You have {0} sweepstacks in the Stack", myStack.Count);
+            Console.WriteLine("Your Stack has an amount of {0}.", myStack.Count);
             foreach (Sweepstakes item in myStack)
             {
                 Console.WriteLine(item.contestants);
             }
             
         }        
-        public void GetSweepstakes(ISweepStakesManager sweepStakesManager)
+        public Sweepstakes GetSweepstakes()
         {
-            
-            
+            return myStack.Pop();
+             
         }
 
     }
