@@ -25,14 +25,20 @@ namespace Sweepstakes
             Console.WriteLine("The name of your sweepstake is " + sweepstakesName);   
             return sweepstakesName;
         }
-        public void CreateSweepstakes()
+        public void CreateSweepstakes(string sweepstakesName)
         {
             Sweepstakes sweepstake = new Sweepstakes(sweepstakesName);
+            PickAmountOfContestants(sweepstake);
             managerDecision.InsertSweepStakes(sweepstake);
         }
-        public void CreateContestants()
+        public void PickAmountOfContestants(Sweepstakes sweepstakes)
         {
-
+            int amount = UserInterface.PickAmountOfContestents();
+            for (int i = 0; i < amount; i++)
+            {
+                //Contestant contestent = new Contestant();
+                sweepstakes.RegisterContestant(new Contestant());
+            }
         }
     }
 }

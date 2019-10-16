@@ -48,16 +48,19 @@ namespace Sweepstakes
                     //Console.WriteLine("Please enter 'stack' or 'queue'.");
                     //ChooseBetweenStackOrQueue();
                     throw new ApplicationException(string.Format("Not a valid manager choice"));
-            }
-            
-            
-            
+            }       
         }
         public static string ChooseSweepStakesName()
         {
             Console.WriteLine("What would you like the name of your SweepStakes to be?");
             string sweepstakesName = Console.ReadLine();
             return sweepstakesName;
+        }
+        public static int PickAmountOfContestents()
+        {
+            Console.WriteLine("How many contestants would you like to enter into the sweepstake?.");
+            int amountOfContestants = int.Parse(Console.ReadLine());
+            return amountOfContestants;
         }
 
     }

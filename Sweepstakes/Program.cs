@@ -17,15 +17,16 @@ namespace Sweepstakes
         {
             MarketingFirm marketingFirm = new MarketingFirm();
             marketingFirm.ChooseManager();
-            //marketingFirm.ChooseSweepstakesName();
+            marketingFirm.ChooseSweepstakesName();
+            marketingFirm.CreateSweepstakes("Vacation");
 
 
-            //Sweepstakes sweepstakes = new Sweepstakes("vacation");
-            //Contestant contestant1 = new Contestant();
-            //Contestant contestant2 = new Contestant();
+            Sweepstakes sweepstakes = new Sweepstakes("vacation");
+            Contestant contestant1 = new Contestant();
+            Contestant contestant2 = new Contestant();
             
-            //sweepstakes.RegisterContestant(contestant1);
-            //sweepstakes.RegisterContestant(contestant2);
+            sweepstakes.RegisterContestant(contestant1);
+            sweepstakes.RegisterContestant(contestant2);
 
             Console.ReadLine();
         }
