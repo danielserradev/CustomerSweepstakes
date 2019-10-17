@@ -12,7 +12,11 @@ namespace Sweepstakes
         public ISweepStakesManager manager;
         public string sweepstakesName;        
         public int winner;
-        //constuctor(Spawner)
+        //constuctor(Spawner)0
+        public MarketingFirm(ISweepStakesManager manager)
+        {
+            this.manager = manager;
+    }
 
         //member method(Can do)
         public ISweepStakesManager ChooseManager()
@@ -27,14 +31,14 @@ namespace Sweepstakes
             sweepstake.PrintContestentInfo();
             manager.InsertSweepStakes(sweepstake);
             if(UserInterface.DecisionToCreateMoreSweepstakes() == "yes")
-            {
-                //ChooseSweepstakesName();
+            {                
                 CreateSweepstakes();
             }
-            else
+            else if (UserInterface.DecisionToCreateMoreSweepstakes() == "no")
             {
                 GrabSweepstakes();
-            }           
+            }
+            
         }
         public void PickAmountOfContestants(Sweepstakes sweepstakes)
         {
@@ -57,10 +61,7 @@ namespace Sweepstakes
             {
                 GrabSweepstakes();
             }
-            else
-            {
-                
-            }
+            
         }        
     }
 }

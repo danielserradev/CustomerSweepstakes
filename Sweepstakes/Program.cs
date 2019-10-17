@@ -15,8 +15,9 @@ namespace Sweepstakes
         //member method(Can do)
         static void Main(string[] args)
         {
-            MarketingFirm marketingFirm = new MarketingFirm();
-            marketingFirm.ChooseManager();
+            ManagerFactory managerFactory = new ManagerFactory();
+            MarketingFirm marketingFirm = new MarketingFirm(managerFactory.ChooseManager());
+            //marketingFirm.ChooseManager();
             marketingFirm.CreateSweepstakes();
 
 
